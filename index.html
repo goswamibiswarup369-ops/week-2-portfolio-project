@@ -1,1 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biswarup Goswami - Interactive Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button id="themeToggle" class="theme-toggle" title="Toggle Dark Mode">
+        🌙
+    </button>
 
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Biswarup Goswami</h1>
+                <p id="dynamicTitle">Web & Android Developer || AI Enthusiast || Python, C, C++ Programmer || DSA Enthusiast ||</p>
+            </div>
+            <nav class="nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#internships" class="nav-link">Internships</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="image-gallery" id="imageGallery">
+                        <img src="https://ui-avatars.com/api/?name=Biswarup+Goswami&size=250&background=3498db&color=fff&bold=true" alt="Biswarup Goswami - Profile" class="profile-img active">
+                        
+                    </div>
+                    <div class="hero-text">
+                        <h2>B.Tech Student & Developer</h2>
+                        <p>6 Virtual Internships Completed | I am a motivated Computer Science and Engineering student at JIS College of Engineering, Kalyani, with a strong foundation in programming and problem-solving. I have hands-on experience with C, C++, Python, html, CSS and a good understanding of Data Structures and Algorithms (DSA).
+
+I have a growing interest in Artificial Intelligence (AI) and enjoy exploring how intelligent systems can be built using data, logic, and algorithms. I am actively learning AI concepts alongside core computer science subjects to strengthen my technical profile.
+
+I am passionate about continuous learning, improving my coding skills, and applying theoretical knowledge to practical problems. I am currently seeking internship or entry-level opportunities where I can gain industry exposure, work on real-world projects, and contribute meaningfully to a team.
+
+Skills: C | C++ | Python | html | CSS | DSA | Artificial Intelligence (AI)
+Interests: AI | Software Development | Problem Solving | Continuous Learning</p>
+                        <button id="statsBtn" class="btn btn-secondary">📊 Show Stats</button>
+                        <div id="statsPanel" class="stats-panel hidden">
+                            <p><strong>Internships:</strong> <span id="internshipCount">6</span></p>
+                            <p><strong>Projects:</strong> <span id="projectCount">12</span></p>
+                            <p><strong>Skills:</strong> <span id="skillCount">15</span>+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPLETE INTERNSHIPS SECTION WITH ALL DETAILS -->
+        <section id="internships" class="section internships">
+            <div class="container">
+                <h2 class="section-title">Virtual Internships 
+                    <span id="internshipBadge" class="badge">6</span>
+                </h2>
+                <button id="addInternship" class="btn btn-add"></button>
+                
+                <div class="internships-intro">
+                    <p>Completed <strong>6 professional virtual internships</strong> gaining hands-on experience in web development, mobile app development, and cybersecurity.</p>
+                </div>
+
+                <div class="internships-grid" id="internshipsGrid">
+                    <!-- INTERNSHIP 1 -->
+                    <div class="internship-card" data-id="1">
+                        <div class="internship-header">
+                            <h3>Code Alpha</h3>
+                            <span class="internship-domain">Machine Learning Intern</span>
+                        </div>
+                        <div class="internship-details">
+                            <p><strong>Duration:</strong> 2 Months</p>
+                            <p><strong>Skills:</strong> HTML5, CSS3, JavaScript</p>
+                            <p>Built responsive web pages and learned modern frontend development practices.</p>
+                        </div>
+                        <div class="internship-actions">
+                            <button onclick="editInternship(1)" class="btn btn-edit">✏️ Edit</button>
+                            <button onclick="removeInternship(1)" class="btn btn-danger btn-sm">🗑️ Remove</button>
+                        </div>
+                    </div>
+
+                    <!-- INTERNSHIP 2 -->
+                    <div class="internship-card" data-id="2">
+                        <div class="internship-header">
+                            <h3>Cognifyz</h3>
+                            <span class="internship-domain">C/C++ Intern</span>
+                        </div>
+                        <div class="internship-details">
+                            <p><strong>Duration:</strong> 1.5 Months</p>
+                            <p><strong>Skills:</strong> Responsive Design, Bootstrap</p>
+                            <p>Developed fully responsive websites and collaborated on team projects.</p>
+                        </div>
+                        <div class="internship-actions">
+                            <button onclick="editInternship(2)" class="btn btn-edit">✏️ Edit</button>
+                            <button onclick="removeInternship(2)" class="btn btn-danger btn-sm">🗑️ Remove</button>
+                        </div>
+                    </div>
+
+                    <!-- INTERNSHIP 3 -->
+                    <div class="internship-card" data-id="3">
+                        <div class="internship-header">
+                            <h3>Codec Technologies</h3>
+                            <span class="internship-domain">Artificial Intelligence</span>
+                        </div>
+                        <div class="internship-details">
+                            <p><strong>Duration:</strong> 2 Months</p>
+                            <p><strong>Skills:</strong> Machine Learning, Python</p>
+                            <p>Worked on AI projects and gained experience with popular ML frameworks.</p>
+                        </div>
+                        <div class="internship-actions">
+                            <button onclick="editInternship(3)" class="btn btn-edit">✏️ Edit</button>
+                            <button onclick="removeInternship(3)" class="btn btn-danger btn-sm">🗑️ Remove</button>
+                        </div>
+                    </div>
+
+                    <!-- INTERNSHIP 4 -->
+                    <div class="internship-card" data-id="4">
+                        <div class="internship-header">
+                            <h3>Codtech Pvt Ltd</h3>
+                            <span class="internship-domain">C/C++ Programming Intern</span>
+                        </div>
+                        <div class="internship-details">
+                            <p><strong>Duration:</strong> 1 Month</p>
+                            <p><strong>Skills:</strong> Frontend Development, Git</p>
+                            <p>Contributed to live projects and learned version control workflows.</p>
+                        </div>
+                        <div class="internship-actions">
+                            <button onclick="editInternship(4)" class="btn btn-edit">✏️ Edit</button>
+                            <button onclick="removeInternship(4)" class="btn btn-danger btn-sm">🗑️ Remove</button>
+                        </div>
+                    </div>
+
+                    <!-- INTERNSHIP 5 -->
+                    <div class="internship-card" data-id="5">
+                        <div class="internship-header">
+                            <h3>Eduskill</h3>
+                            <span class="internship-domain">Fortinet Cybersecurity</span>
+                        </div>
+                        <div class="internship-details">
+                            <p><strong>Duration:</strong> 1 Month</p>
+                            <p><strong>Skills:</strong> Network Security, Fortinet NSE</p>
+                            <p>Learned cybersecurity fundamentals and network security practices.</p>
+                        </div>
+                        <div class="internship-actions">
+                            <button onclick="editInternship(5)" class="btn btn-edit">✏️ Edit</button>
+                            <button onclick="removeInternship(5)" class="btn btn-danger btn-sm">🗑️ Remove</button>
+                        </div>
+                    </div>
+
+                    <!-- INTERNSHIP 6 -->
+                    <div class="internship-card" data-id="6">
+                        <div class="internship-header">
+                            <h3>Android App Development</h3>
+                            <span class="internship-domain">Mobile Applications</span>
+                        </div>
+                        <div class="internship-details">
+                            <p><strong>Duration:</strong> 2 Months</p>
+                            <p><strong>Skills:</strong> Kotlin, Material Design</p>
+                            <p>Advanced Android development with modern Kotlin practices.</p>
+                        </div>
+                        <div class="internship-actions">
+                            <button onclick="editInternship(6)" class="btn btn-edit">✏️ Edit</button>
+                            <button onclick="removeInternship(6)" class="btn btn-danger btn-sm">🗑️ Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid" id="skillsGrid">
+                    <!-- Dynamic skills loaded by JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="userName" placeholder="Your Full Name *" required>
+                        <input type="email" id="userEmail" placeholder="Your Email Address *" required>
+                    </div>
+                    <textarea id="userMessage" placeholder="Your Message (minimum 10 characters) *" rows="5" required></textarea>
+                    <div id="formErrors" class="error-messages"></div>
+                    <button type="submit" class="btn btn-primary">🚀 Send Message</button>
+                </form>
+                <div id="formSuccess" class="success-message hidden">
+                    <h3>✅ Thank You!</h3>
+                    <p>Message received from <strong id="submittedName"></strong>. I'll respond within 24 hours!</p>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <p><strong>📧 Email:</strong></p>
+                        <a href="mailto:goswamibiswarup369@gmail.com" class="contact-link">goswamibiswarup369@gmail.com</a>
+                    </div>
+                    <div class="contact-card">
+                        <p><strong>📱 Phone/WhatsApp:</strong></p>
+                        <a href="tel:+918918413701" class="contact-link">+91 89184 13701</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 <strong>Biswarup Goswami</strong> | Interactive Developer Portfolio</p>
+            <div class="social-links">
+                <a href="https://github.com/goswamibiswarup369-ops" target="_blank" rel="noopener">🐙 GitHub</a>
+                <a href="https://www.linkedin.com/in/biswarup-goswami-27881b2b9" target="_blank" rel="noopener">💼 LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
