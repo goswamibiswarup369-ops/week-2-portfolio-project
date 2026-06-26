@@ -1,5 +1,3 @@
-http://127.0.0.1:5500/personal%20portfolio%201/index.html
-
 ## 📋 **Project Overview**
 
 **Objective**: Transform static portfolio into **fully interactive website** using **Vanilla JavaScript** with:
